@@ -33,9 +33,7 @@ def part2():
             if o2[j][i] == '0': zero += 1
             else: one += 1
 
-        m = ''
-        if zero > one: m = '0'
-        else: m = '1' 
+        m = '0' if zero > one else '1'
 
         o2_temp = o2[:]
 
@@ -50,9 +48,7 @@ def part2():
             if co2[j][i] == '0': zero += 1
             else: one += 1
 
-        m = ''
-        if zero <= one: m = '0'
-        else: m = '1' 
+        m = '0' if zero <= one else '1'
 
         co2_temp = co2[:]
 
