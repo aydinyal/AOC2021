@@ -34,12 +34,14 @@ def part2():
             else: one += 1
 
         m = '0' if zero > one else '1'
-
-        o2_temp = o2[:]
+ 
+        r = 0
 
         if len(o2) > 1:   
-            for j in range(len(o2_temp)):
-                if o2_temp[j][i] != m: o2.remove(o2_temp[j]) 
+            for j in range(len(o2)-r):
+                if o2[j-r][i] != m:
+                    o2.remove(o2[j-r])
+                    r += 1
 
 
     for i in range(len(co2[0])):
@@ -50,11 +52,13 @@ def part2():
 
         m = '0' if zero <= one else '1'
 
-        co2_temp = co2[:]
+        r = 0
 
         if len(co2) > 1: 
-            for j in range(len(co2_temp)):
-                if co2_temp[j][i] != m: co2.remove(co2_temp[j])
+            for j in range(len(co2)-r):
+                if co2[j-r][i] != m:
+                    co2.remove(co2[j-r])
+                    r += 1
  
     return int(o2[0], 2) * int(co2[0], 2)
 
